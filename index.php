@@ -24,43 +24,85 @@
 		</div>
 	</header>
 	<div class="contenedor">
-		<div class="row justify-content-center">
+		<div class="row justify-content-center mb-2">
 			<div class="col-12">
 				<div class="card-deck">
 					<div class="card">
 						<img src="img/php.png" class="card-img-top" alt="">
 						<div class="card-body">
-							<h5 class="card-title">Titulo Articulo</h5>
-							<p class="card-text">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident suscipit ullam quia, esse rem nisi. Ipsa qui necessitatibus, temporibus totam.
 							</p>
 						</div>
 						<div class="card-footer">
-							<a href="#" class="btn btn-link">Ver más</a>
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
 						</div>
 					</div>
 					<div class="card">
 						<img src="img/js.png" class="card-img-top" alt="">
 						<div class="card-body">
-							<h5 class="card-title">Titulo Articulo</h5>
-							<p class="card-text">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam possimus atque dicta veniam, rem adipisci veritatis illum assumenda odio quisquam?
 							</p>
 						</div>
 						<div class="card-footer">
-							<a href="#" class="btn btn-link">Ver más</a>
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
 						</div>
 					</div>
 					<div class="card">
 						<img src="img/jquery.png" class="card-img-top" alt="">
 						<div class="card-body">
-							<h5 class="card-title">Titulo Articulo</h5>
-							<p class="card-text">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor maxime, officiis nesciunt voluptates repellendus magni vero voluptate! Aspernatur, quasi, sed.
 							</p>
 						</div>
 						<div class="card-footer">
-							<a href="#" class="btn btn-link">Ver más</a>
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center mb-2">
+			<div class="col-12">
+				<div class="card-deck">
+					<div class="card">
+						<img src="img/php.png" class="card-img-top" alt="">
+						<div class="card-body">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident suscipit ullam quia, esse rem nisi. Ipsa qui necessitatibus, temporibus totam.
+							</p>
+						</div>
+						<div class="card-footer">
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="img/js.png" class="card-img-top" alt="">
+						<div class="card-body">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam possimus atque dicta veniam, rem adipisci veritatis illum assumenda odio quisquam?
+							</p>
+						</div>
+						<div class="card-footer">
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
+						</div>
+					</div>
+					<div class="card">
+						<img src="img/jquery.png" class="card-img-top" alt="">
+						<div class="card-body">
+							<h5 class="titulo card-title">Titulo Articulo</h5>
+							<p class="extracto card-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor maxime, officiis nesciunt voluptates repellendus magni vero voluptate! Aspernatur, quasi, sed.
+							</p>
+						</div>
+						<div class="card-footer">
+							<a href="#" class="btn btn-sm btn-danger">Leer más</a>
 						</div>
 					</div>
 				</div>

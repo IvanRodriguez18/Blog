@@ -73,9 +73,31 @@ header .elementos>input[type="text"]:focus{
 }
 header .elementos>a{
 	color: #FFF;
-	font-size: 23px;
+	font-size: 25px;
 	transition: 2s ease all;
 }
 header .elementos>a:hover{
 	transform: rotate(360deg);
+}
+/*Articulos*/
+.titulo{
+	font-size: 20px;
+	color: #666;
+}
+.extracto{
+	font-size: 15px;
+	text-align: justify;
+	color: #666;
+}
+.card:hover {
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card>img {
+    opacity: .9;
+    transition: 1s ease opacity;
+}
+
+.card:hover img {
+    opacity: 10;
 }
