@@ -1,0 +1,81 @@
+@font-face{
+	font-family: 'Oswald';
+	src:url('../fonts/Oswald-Regular.ttf');
+}
+@font-face{
+	font-family: 'Open Sans';
+	src:url('../fonts/OpenSans-Regular.ttf');
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background: #EBEBEB;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 16px;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Oswald';
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	color: #BB1F35;
+}
+a:hover{
+	text-decoration: underline;
+}
+.contenedor{
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+}
+/*Header*/
+header>.contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.elementos{
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+header{
+	background: #BB1F35;
+	padding: 10px 0px;
+	margin-bottom: 30px;
+}
+header .contenedor>h1>a{
+	color: #FFF;
+	text-decoration: none;
+	font-size: 30px;
+}
+header .elementos>input[type="text"]{
+	background: none;
+	border:1px solid rgba(255, 255, 255, .7);
+	color: rgba(255, 255, 255, .7);
+	padding: 5px;
+	width: 50%;
+	height: 30px;
+	transition: 1s ease all;
+	font-size: 13px;
+}
+header .elementos>input[type="text"]:hover,
+header .elementos>input[type="text"]:focus{
+	border:1px solid #FFF;
+	color:#FFF;
+}
+header .elementos>a{
+	color: #FFF;
+	font-size: 23px;
+	transition: 2s ease all;
+}
+header .elementos>a:hover{
+	transform: rotate(360deg);
+}
