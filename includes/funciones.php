@@ -11,12 +11,23 @@ function conexionBD()
 		return false;	
 	}
 }
+function obtenerPagina()
+{
+	$pagina = basename($_SERVER['PHP_SELF']);
+	$actual = str_replace('.php', '', $pagina);
+	return $actual;
+}
 function limpiarDatos($datos)
 {
 	$datos = htmlspecialchars($datos);
 	$datos = trim($datos);
 	$datos = stripslashes($datos);
 	return $datos;
+}
+function encriptaPassword($password)
+{
+	$password = hash('sha512', $password);
+	return $password;
 }
 function consultaRegistros($sql, $conecta)
 {

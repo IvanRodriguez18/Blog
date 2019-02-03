@@ -1,5 +1,4 @@
 <?php
-include 'includes/funciones.php'; 
 include 'includes/header.php';
 $conecta = conexionBD();
 $id = validaId($_GET['id']);
@@ -30,6 +29,7 @@ if (empty($id))
 				</div>
 				<div class="card-footer">
 					<small class="text-muted"><?php echo fecha($resultado['fecha_publicacion']); ?></small>
+					<a href="index.php" class="btn btn-sm btn-danger">Regresar</a>
 				</div>
 			</div>
 		</div>

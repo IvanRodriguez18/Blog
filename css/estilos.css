@@ -22,12 +22,24 @@ h1, h2, h3, h4, h5, h6{
 	font-family: 'Oswald';
 	font-weight: normal;
 }
+.titulo-general{
+	color: #666;
+}
 a{
 	text-decoration: none;
 	color: #BB1F35;
 }
 a:hover{
 	text-decoration: underline;
+}
+.enlace-login{
+	text-decoration: none;
+	color: #BB1F35;
+	font-size: 13px;
+}
+.enlace-login:hover{
+	color: #BB1F35;
+	text-decoration:underline;
 }
 .contenedor{
 	max-width: 1000px;

@@ -2,7 +2,7 @@
 <div class="contenedor">
 	<div class="row justify-content-center mb-3">
 		<div class="col-md-6">
-			<h2 class="titulo text-center">Formulario de Contacto</h2>
+			<h2 class="titulo-general text-center">Formulario de Contacto</h2>
 		</div>
 	</div>
 	<div class="row justify-content-center">
@@ -23,7 +23,9 @@
 				</div>
 				<div class="row justify-content-center">
 					<div class="col-4 text-center">
-						<button type="submit" class="btn btn-sm btn-danger btn-block">Enviar</button>
+						<button type="submit" class="btn btn-danger btn-block">
+							Enviar <i class="fab fa-telegram-plane"></i>
+						</button>
 					</div>
 				</div>
 			</form>

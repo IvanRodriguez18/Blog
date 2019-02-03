@@ -2,6 +2,8 @@ $(document).ready(function()
 {
 	consultaArticulos();
 	$('#contacto').submit(enviaMensaje);
+	$('#login').submit(iniciaSesion);
+	$('#registro').submit(registraUsuario);
 });
 // Función que obtiene todos los articulos registrados en la base de datos
 function consultaArticulos() 
@@ -101,8 +103,54 @@ function enviaMensaje(event)
 		}
 	});
 }
-// Función que limpia los datos del formulario
-// function limpiaFormulario() 
-// {
-// 	$('#contacto')[0].reset();
-// }
+// Función para iniciar sesión 
+function iniciaSesion(event) 
+{
+	event.preventDefault();
+	const datos = $('#login').serialize();
+}
+// Función para realizar el registro de usuarios
+function registraUsuario(event) 
+{
+	event.preventDefault();
+	const datos = new FormData();
+	datos.append('nombres', $('#nombres').val());
+	datos.append('foto', $('#foto').val());
+	datos.append('correo', $('#correo').val());
+	datos.append('usuario', $('#usuario').val());
+	datos.append('password', $('#password').val());
+	console.log(...datos);
+	$.ajax({
+		type: 'POST',
+		url: '../admin/php/registraUsuario.php',
+		data: datos,
+		processData: false,
+		contentType: false,
+		dataType: 'JSON',
+		success: function(respuesta) 
+		{
+			if (respuesta.success == true) 
+			{
+				swal({
+					type: 'success',
+					title: 'Registro Exitoso',
+					text: respuesta.message
+				})
+				.then(resultado => {
+					if (resultado.value) 
+					{
+						window.location.href = '../admin/login.php';
+					} 
+				});
+			} 
+			else 
+			{
+				swal({
+					type: 'error',
+					title: 'Error!',
+					text: respuesta.message
+				});
+			}
+		}
+	});
+}
