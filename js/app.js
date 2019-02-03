@@ -1,6 +1,7 @@
 $(document).ready(function() 
 {
 	consultaArticulos();
+	$('#contacto').submit(enviaMensaje);
 });
 // Función que obtiene todos los articulos registrados en la base de datos
 function consultaArticulos() 
@@ -63,3 +64,45 @@ function mostrarArticulo(informacion)
 	columna.append(card);
 	$('.fila').append(columna);
 }
+// Función qu envia el formulario de contacto
+function enviaMensaje(event) 
+{
+	event.preventDefault();
+	const datos = $('#contacto').serialize();
+	$.ajax({
+		type: 'POST',
+		data: datos,
+		url: 'php/ingresaMensajeContacto.php',
+		dataType: 'JSON',
+		success: function(respuesta) 
+		{
+			if (respuesta.success == true) 
+			{
+				swal({
+					type: 'success',
+					title: 'Mensaje Enviado',
+					text: respuesta.message
+				})
+				.then(respuesta => {
+					if (respuesta.value) 
+					{
+						window.location.href = 'index.php';
+					}
+				});
+			} 
+			else 
+			{
+				swal({
+					type: 'error',
+					title: 'Fatal Error!',
+					text: respuesta.message
+				});
+			}
+		}
+	});
+}
+// Función que limpia los datos del formulario
+// function limpiaFormulario() 
+// {
+// 	$('#contacto')[0].reset();
+// }

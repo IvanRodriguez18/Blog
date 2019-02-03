@@ -19,7 +19,7 @@
 				<a href="https://github.com/IvanRodriguez18" target="_blank">
 					<i class="fab fa-github"></i>
 				</a>
-				<a href="#"><i class="fas fa-envelope"></i></a>
+				<a href="contacto.php"><i class="fas fa-envelope"></i></a>
 			</div>
 		</div>
 	</header>

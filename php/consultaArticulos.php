@@ -1,8 +1,12 @@
 <?php
 error_reporting(0);
+
 header('Content-type: application/json; charset=utf-8');
+
 include '../includes/funciones.php';
+
 $conecta = conexionBD();
+
 if (!$conecta) 
 {
 	$respuesta = [
@@ -17,6 +21,7 @@ else
 						 INNER JOIN usuarios 
 						 	ON articulos.id_usuario = usuarios.id_usuario 
 						 	 ORDER BY id_articulo DESC";
+
 	$articulos = consultaRegistros($obtenArticulos, $conecta);
 
 	if ($articulos !== false) 
