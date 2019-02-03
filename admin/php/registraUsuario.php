@@ -5,7 +5,8 @@ include '../../includes/funciones.php';
 $conecta = conexionBD();
 if (!$conecta) 
 {
-	echo "Fallo";
+	$respuesta = ['error' => false,
+				  'message' => 'Ha ocurrido un error inseperado, intentelo más tarde'];
 }
 $nombres = limpiarDatos(ucwords($_POST['nombres']));
 $foto = $_FILES['foto'];
@@ -13,7 +14,7 @@ $tipo = $_FILES['type'];
 $correo = limpiarDatos(strtolower($_POST['correo']));
 $usuario = limpiarDatos($_POST['usuario']);
 $password = limpiarDatos(encriptaPassword($_POST['password']));
-if (empty($nombres) || empty($foto) || empty($correo) || empty($usuario) || empty($password)) 
+if (empty($nombres) || empty($correo) || empty($usuario) || empty($password)) 
 {
 	$respuesta = ['error' => false, 
 				  'message' => 'Todos los campos son obligatorios'

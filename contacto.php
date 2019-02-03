@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php';?>
 <div class="contenedor">
 	<div class="row justify-content-center mb-3">
 		<div class="col-md-6">
@@ -32,4 +32,4 @@
 		</div>
 	</div>
 </div>
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php';?>

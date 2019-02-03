@@ -113,19 +113,17 @@ function iniciaSesion(event)
 function registraUsuario(event) 
 {
 	event.preventDefault();
-	const datos = new FormData();
-	datos.append('nombres', $('#nombres').val());
-	datos.append('foto', $('#foto').val());
-	datos.append('correo', $('#correo').val());
-	datos.append('usuario', $('#usuario').val());
-	datos.append('password', $('#password').val());
-	console.log(...datos);
+	const datos = $('#registro').serialize();
+	// datos.append('nombres', $('#nombres').val());
+	// datos.append('foto', $('#foto').val());
+	// datos.append('correo', $('#correo').val());
+	// datos.append('usuario', $('#usuario').val());
+	// datos.append('password', $('#password').val());
+	// console.log(...datos);
 	$.ajax({
 		type: 'POST',
 		url: '../admin/php/registraUsuario.php',
 		data: datos,
-		processData: false,
-		contentType: false,
 		dataType: 'JSON',
 		success: function(respuesta) 
 		{
