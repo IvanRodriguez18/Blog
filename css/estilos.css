@@ -130,3 +130,10 @@ header .elementos>a:hover{
 .card:hover img {
     opacity: 10;
 }
+/*Estilos administrador*/
+.acciones{
+	font-size: 22px;
+}
+.acciones:hover{
+	color: #BB1F35;
+}

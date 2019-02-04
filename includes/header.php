@@ -37,8 +37,8 @@ $pagina = obtenerPagina();
 				<h1><a href="administrador.php">SoftBlogMx</a></h1>
 				<div class="elementos">
 					<div class="user-info">
-						<img src="../img/BP.png" class="image-user rounded-circle">
-						<span class="user-name">Chubambi95</span>
+						<img src="../img/<?php echo $_SESSION['img'];?>" class="image-user rounded-circle">
+						<span class="user-name"><?php echo $_SESSION['usuario'];?></span>
 					</div>
 					<div class="dropdown">
 						<a href="#" class="btn btn-sm btn-block btn-danger dropdown-toggle" type="button" id="configuracion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

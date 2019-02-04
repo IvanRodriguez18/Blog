@@ -69,9 +69,5 @@ function comprobarSesion()
 	{
 		header('Location:login.php');
 	}
-	else
-	{
-		header('Location:administrador.php');
-	}
 }
 ?>

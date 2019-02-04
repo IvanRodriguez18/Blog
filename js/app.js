@@ -108,6 +108,37 @@ function iniciaSesion(event)
 {
 	event.preventDefault();
 	const datos = $('#login').serialize();
+	$.ajax({
+		type: 'POST',
+		url: '../admin/php/consultaUsuario.php',
+		data: datos,
+		dataType: 'JSON',
+		success: function (respuesta) 
+		{
+			if (respuesta.success == true) 
+			{
+				swal({
+					type: 'success',
+					title: 'Autentificación Exitosa',
+					confirmButtonText: 'Ingresar',
+					text: respuesta.message
+				})
+				.then(resultado => {
+					if (resultado.value) 
+					{
+						window.location.href = '../admin/administrador.php';
+					}
+				});
+			}else 
+			{
+				swal({
+					type: 'error',
+					title: 'Error!',
+					text: respuesta.message
+				});
+			}
+		}
+	});
 }
 // Función para realizar el registro de usuarios
 function registraUsuario(event) 

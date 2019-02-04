@@ -1,4 +1,9 @@
-<?php include '../includes/header.php'; ?>
+<?php 
+include '../includes/header.php'; 
+if (isset($_SESSION['usuario'])) {
+	header('Location:administrador.php');
+}
+?>
 <div class="contenedor">
 	<div class="row justify-content-center mb-3">
 		<div class="col-6">
