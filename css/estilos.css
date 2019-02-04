@@ -91,6 +91,23 @@ header .elementos>a{
 header .elementos>a:hover{
 	transform: rotate(360deg);
 }
+.user-info{
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.image-user{
+	width:25%;
+}
+.user-name{
+	color: #F2F2F2;
+	font-size: 14px;
+}
+.icono-menu{
+	color: #BB1F35;
+	font-size: 16px;
+}
 /*Articulos*/
 .titulo{
 	font-size: 20px;

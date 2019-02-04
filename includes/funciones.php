@@ -63,4 +63,15 @@ function fecha($fecha)
 	$fecha = "$dia de " . $meses[$mes] . " del $anio";
 	return $fecha;
 }
+function comprobarSesion()
+{
+	if (!isset($_SESSION['usuario'])) 
+	{
+		header('Location:login.php');
+	}
+	else
+	{
+		header('Location:administrador.php');
+	}
+}
 ?>

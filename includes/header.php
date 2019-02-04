@@ -33,6 +33,30 @@ $pagina = obtenerPagina();
 					</a>
 					<a href="contacto.php"><i class="fas fa-envelope"></i></a>
 				</div>
+			<?php elseif ($pagina == 'administrador'):?>
+				<h1><a href="administrador.php">SoftBlogMx</a></h1>
+				<div class="elementos">
+					<div class="user-info">
+						<img src="../img/BP.png" class="image-user rounded-circle">
+						<span class="user-name">Chubambi95</span>
+					</div>
+					<div class="dropdown">
+						<a href="#" class="btn btn-sm btn-block btn-danger dropdown-toggle" type="button" id="configuracion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Opciones de la Cuenta
+						</a>
+						<div class="dropdown-menu" aria-labelledby="configuracion">
+							<a href="#" class="dropdown-item">
+								<i class="icono-menu fas fa-user-cog"></i> Mi perfil
+							</a>
+							<a href="#" class="dropdown-item">
+								<i class="icono-menu fas fa-file"></i> Nuevo articulo
+							</a>
+							<a href="logout.php" class="dropdown-item">
+								<i class="icono-menu fas fa-sign-out-alt"></i> Salir
+							</a>
+						</div>
+					</div>
+				</div>
 			<?php else: ?>
 				<h1><a href="../index.php">SoftBlogMx</a></h1>
 			<?php endif; ?>
