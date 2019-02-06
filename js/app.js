@@ -4,6 +4,7 @@ $(document).ready(function()
 	$('#contacto').submit(enviaMensaje);
 	$('#login').submit(iniciaSesion);
 	$('#registro').submit(registraUsuario);
+	$('#form-articulo').submit(enviaArticulo);
 });
 // Función que obtiene todos los articulos registrados en la base de datos
 function consultaArticulos() 
@@ -135,6 +136,12 @@ function iniciaSesion(event)
 					type: 'error',
 					title: 'Error!',
 					text: respuesta.message
+				})
+				.then(resultado => {
+					if (resultado.value) 
+					{
+						limpiarFormulario($('#login'));
+					}
 				});
 			}
 		}
@@ -180,4 +187,68 @@ function registraUsuario(event)
 			}
 		}
 	});
+}
+// Función para registrar o modificar un articulo
+function enviaArticulo(event) 
+{
+	event.preventDefault();
+	const accion = $('#accion').val();
+	const datos = new FormData($('#form-articulo')[0]);
+	if (accion == 'insertar') 
+	{
+		insertaArticulo(datos);
+	} 
+	else 
+	{
+		editaArticulo(datos);
+	}
+}
+function insertaArticulo(datos) 
+{
+	console.log('sección insertar');
+	console.log(...datos);
+	$.ajax({
+		type: 'POST',
+		dataType: 'JSON',
+		contentType: false,
+		processData: false,
+		url: '../admin/php/accionesArticulos.php',
+		data: datos,
+		success: function(respuesta) 
+		{
+			if (respuesta.success == true) 
+			{
+				swal({
+					type: 'success',
+					title: 'Articulo Registrado',
+					text: respuesta.message
+				})
+				.then(resultado => {
+					if (resultado.value) 
+					{
+						window.location.href = '../admin/administrador.php';
+						consultaArticulos();
+					}
+				});
+			} 
+			else 
+			{
+				swal({
+					type: 'error',
+					title: 'Error!',
+					text: respuesta.message
+				});
+			}
+		}
+	});
+}
+function editaArticulo(datos) 
+{
+	console.log('sección actualizar');
+	console.log(...datos);
+}
+// Función para limpiar Formularios
+function limpiarFormulario(formulario) 
+{
+	formulario[0].reset();
 }

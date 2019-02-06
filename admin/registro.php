@@ -8,7 +8,7 @@
 	<div class="row justify-content-center">
 		<div class="col-6">
 			<form id="registro" enctype="multipart/form-data">
-				<div class="form-group row justify-content-center">
+				  <div class="form-group row justify-content-center">
     				<label for="nombres" class="col-sm-2 col-form-label">Nombre(s)</label>
     				<div class="col-sm-8">
       					<input type="text" name="nombres" class="form-control form-control-sm" id="nombres" 

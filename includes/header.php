@@ -33,7 +33,8 @@ $pagina = obtenerPagina();
 					</a>
 					<a href="contacto.php"><i class="fas fa-envelope"></i></a>
 				</div>
-			<?php elseif ($pagina == 'administrador'):?>
+			<?php elseif ($pagina == 'administrador' || $pagina == 'nuevoArticulo' || 
+			$pagina == 'editaArticulo'):?>
 				<h1><a href="administrador.php">SoftBlogMx</a></h1>
 				<div class="elementos">
 					<div class="user-info">
@@ -48,7 +49,7 @@ $pagina = obtenerPagina();
 							<a href="#" class="dropdown-item">
 								<i class="icono-menu fas fa-user-cog"></i> Mi perfil
 							</a>
-							<a href="#" class="dropdown-item">
+							<a href="nuevoArticulo.php" class="dropdown-item">
 								<i class="icono-menu fas fa-file"></i> Nuevo articulo
 							</a>
 							<a href="logout.php" class="dropdown-item">

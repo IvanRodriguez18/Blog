@@ -1,8 +1,14 @@
 <?php 
+session_start();
 include '../includes/header.php';
 comprobarSesion();
+$conecta = conexionBD();
+$id_usuario = $_SESSION['id'];
+$sql = "SELECT * FROM articulos WHERE id_usuario='$id_usuario' ORDER BY id_articulo DESC";
+$registros = obtenById($sql, $conecta);
 ?>
 <div class="contenedor">
+	<?php if ($registros !== false):?>
 	<div class="row justify-content-center mb-3">
 		<div class="col-6 text-center">
 			<h3 class="titulo">Listado de articulos publicados</h3>
@@ -21,15 +27,12 @@ comprobarSesion();
 					</tr>
 				</thead>
 				<tbody>
+					<?php foreach ($registros as $registro):?>
 					<tr>
-						<th class="text-center" scope="row">1</th>
-						<td class="text-center">PHP 7</td>
-						<td class="text-justify">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum numquam commodi aperiam beatae, obcaecati harum?
-						</td>
-						<td class="text-center">
-							29 de Enero del 2019
-						</td>
+						<th class="text-center" scope="row"><?php echo $registro['id_articulo']; ?></th>
+						<td class="text-center"><?php echo $registro['titulo']; ?></td>
+						<td class="text-justify"><?php echo $registro['extracto']; ?></td>
+						<td class="text-center"><?php echo fecha($registro['fecha_publicacion']); ?></td>
 						<td class="text-center">
 							<a href="#" class="acciones">
 								<i class="fas fa-edit"></i>
@@ -39,9 +42,20 @@ comprobarSesion();
 							</a>
 						</td>
 					</tr>
+					<?php endforeach;?>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	<?php else: ?>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<div class="alert alert-danger text-center" role="alert">
+					Aún no has publicado ningún articulo
+					<a href="nuevoArticulo.php" class="alert-link">Nuevo Articulo Aquí</a>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
 </div>
 <?php include '../includes/footer.php'; ?>

@@ -29,6 +29,7 @@ else
 		{
 			while ($registro = $resultado->fetch(PDO::FETCH_ASSOC)) 
 			{
+				session_start();
 				$_SESSION['usuario'] = $usuario;
 				$_SESSION['id'] = $registro['id_usuario'];
 				$_SESSION['nombre'] = $registro['nombre'];
